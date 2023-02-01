@@ -21,19 +21,27 @@ Los siguientes comandos permiten crear productores y consumidores lanzables desd
 1. Descomprime el archivo y abre una terminal en el directorio `bin`de la carpeta descomprimida.
 2. Comenzaremos por crear el topic `testtopic` en el que nuestros consumidores trabajarán. Ejecuta el siguiente comando:
 
-`./kafka-topics.sh --bootstrap-server localhost:9093 --create --topic testtopic `
+```bash
+./kafka-topics.sh --bootstrap-server localhost:9093 --create --topic testtopic
+```
 
 3. Comprueba que se ha creado el topic correctamente:
 
-`./kafka-topics.sh --bootstrap-server localhost:9093 --list`
+```bash
+./kafka-topics.sh --bootstrap-server localhost:9093 --list
+```
 
 4. De momento no utilizaremos más este comando, pero puedes comprobar la ayuda para ver todas las funciones proporcionadas:
 
-`./kafka-topics.sh --bootstrap-server localhost:9093 --help`
+```bash
+./kafka-topics.sh --bootstrap-server localhost:9093 --help
+```
 
 5. Ahora que tenemos el topic creado, vamos a iniciar un consumidor que muestre todos los mensajes mandados:
 
-`/kafka-console-consumer.sh --bootstrap-server localhost:9093 --topic testtopic`
+```bash
+./kafka-console-consumer.sh --bootstrap-server localhost:9093 --topic testtopic
+```
 
 6. Abre otra terminal en el mismo directorio. En esta terminal vamos a crear un productor, que nos permitirá enviar un mensaje al nuevo topic cada vez que escribamos algo y demos al intro:
 

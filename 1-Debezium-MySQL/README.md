@@ -22,12 +22,12 @@ curl -H "Accept:application/json" localhost:8083/connectors/
 
 5. Inspeccionamos sus detalles
 
-```
+```bash
 curl -i -X GET -H "Accept:application/json" localhost:8083/connectors/inventory-connector
 ```
 
 6. Comprobamos los topics existentes en Kafka tras realizar la conexión
 
-```
+```bash
 kafka-topics.sh --bootstrap-server localhost:9093 --list
 ```
