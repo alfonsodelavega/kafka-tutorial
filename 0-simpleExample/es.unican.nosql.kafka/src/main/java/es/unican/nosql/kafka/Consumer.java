@@ -21,7 +21,7 @@ public class Consumer {
 		System.out.println("I am a Kafka Consumer");
 
 		String bootstrapServers = "127.0.0.1:9093";
-		String groupId = "my-fifth-application";
+		String groupId = "my_first_consumer";
 		String topic = "testtopic";
 
 		// create consumer configs
@@ -56,9 +56,12 @@ public class Consumer {
 		});
 
 		try {
-
 			// subscribe consumer to our topic(s)
 			consumer.subscribe(Arrays.asList(topic));
+
+			// uncomment to set the consumer offset to the end of the stream
+			// if commented, the offset is set to 0, and all existing messages are processed
+			// consumer.seekToEnd(consumer.assignment());
 
 			// poll for new data
 			while (true) {
